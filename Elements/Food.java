@@ -24,5 +24,11 @@ public class Food extends Block{
 	public Point getLoc() {
 		return this.lp;
 	}
+
+	@Override
+	public Point setLoc() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

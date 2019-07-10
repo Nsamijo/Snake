@@ -11,8 +11,7 @@ abstract class Block {
 	}
 	
 	public abstract void setX(int x);
-	
 	public abstract void setY(int y);
-	
+	public abstract Point setLoc();
 	public abstract Point getLoc();
 }

@@ -30,4 +30,10 @@ public class Body extends Block{
 		return this.lp;
 	}
 
+	@Override
+	public Point setLoc() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

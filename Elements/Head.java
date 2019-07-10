@@ -2,15 +2,14 @@ package Elements;
 
 import java.awt.Point;
 
-public class Head extends Block {
+public class Head extends Body {
 	
 	private Point lp;
 	public Body next;
 	
 	Head(Point p, Body next) {
-		super(p);
+		super(p, next, null);
 		this.lp = p;
-		this.next = next;
 	}
 
 	@Override
