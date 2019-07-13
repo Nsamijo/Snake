@@ -1,18 +1,23 @@
 package Elements;
 
+import java.awt.Color;
 import java.awt.Point;
 
 public class Body extends Block{
+	/*
+	 * body of snek
+	 */
 	
 	public Body prev;
 	public Body next;
+	
 	private Point lp;
+	final Color color;
 
-	Body(Point p, Body next, Body prev) {
-		super(p);
+	Body(Point p, Color color) {
+		super(p, color);
 		this.lp = p;
-		this.next = next;
-		this.prev = prev;
+		this.color = color;
 	}
 
 	@Override
@@ -31,9 +36,8 @@ public class Body extends Block{
 	}
 
 	@Override
-	public Point setLoc() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setLoc(Point o) {
+		this.lp = o;
 	}
 
 }

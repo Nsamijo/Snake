@@ -1,13 +1,19 @@
 package Elements;
 
+import java.awt.Color;
 import java.awt.Point;
 
 public class Food extends Block{
+	/*
+	 * food for snek
+	 */
 	private Point lp;
+	final Color color;
 
-	Food(Point p) {
-		super(p);
+	Food(Point p, Color color) {
+		super(p, color);
 		this.lp = p;
+		this.color = color;
 	}
 
 	@Override
@@ -26,9 +32,8 @@ public class Food extends Block{
 	}
 
 	@Override
-	public Point setLoc() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setLoc(Point o) {
+		this.lp = o;
 	}
 	
 }

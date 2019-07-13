@@ -1,15 +1,22 @@
 package Elements;
 
+import java.awt.Color;
 import java.awt.Point;
 
 public class Head extends Body {
+	/*
+	 * head of snek 
+	 */
 	
 	private Point lp;
+	final Color color;
+	
 	public Body next;
 	
-	Head(Point p, Body next) {
-		super(p, next, null);
-		this.lp = p;
+	Head(Point point, Color color) {
+		super(point, color);
+		this.lp = point;
+		this.color = color;
 	}
 
 	@Override
