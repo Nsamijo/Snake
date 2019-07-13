@@ -9,7 +9,7 @@ public class Head extends Body {
 	 */
 	
 	private Point lp;
-	final Color color;
+	private Color color;
 	
 	public Body next;
 	
@@ -18,20 +18,34 @@ public class Head extends Body {
 		this.lp = point;
 		this.color = color;
 	}
-
-	@Override
-	public void setX(int x) {
-		this.lp.x = x;
+	
+	/*
+	 * getters and setters for color, location and next block
+	 * no previous block since this is the head, first in the list
+	 */
+	
+	public void setCol(Color color) {
+		this.color = color;
 	}
-
-	@Override
-	public void setY(int y) {
-		this.lp.y = y;
-	}
-
-	@Override
-	public Point getLoc() {
-		return lp;
+		
+	public void setLoc(Point point) {
+		this.lp = point;
 	}
 	
+	public void setNext(Body next) {
+		this.next = next;
+	}
+	
+	public Body getNext() {
+		return next;
+	}
+	
+	public Color getCol() {
+		return this.color;
+	}
+	
+	public Point getLoc() {
+		return this.lp;
+	}
+
 }

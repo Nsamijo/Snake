@@ -12,32 +12,52 @@ public class Body extends Block{
 	public Body next;
 	
 	private Point lp;
-	final Color color;
+	private Color color;
 
 	Body(Point p, Color color) {
 		super(p, color);
 		this.lp = p;
 		this.color = color;
 	}
+	
+	/*
+	 * getters and setters
+	 */
 
 	@Override
-	public void setX(int x) {
-		this.lp.x = x;
+	public void setCol(Color color) {
+		this.color = color;
 	}
 
 	@Override
-	public void setY(int y) {
-		this.lp.y = y;
+	public void setLoc(Point point) {
+		this.lp = point;
+	}
+	
+	public void setNext(Body next) {
+		this.next = next;
+	}
+	
+	public void setPrev(Body prev) {
+		this.prev = prev;
+	}
+	
+	public Body getNext() {
+		return this.next;
+	}
+	
+	public Body getPrev() {
+		return this.prev;
+	}
+
+	@Override
+	public Color getColor() {
+		return this.color;
 	}
 
 	@Override
 	public Point getLoc() {
 		return this.lp;
-	}
-
-	@Override
-	public void setLoc(Point o) {
-		this.lp = o;
 	}
 
 }

@@ -16,8 +16,12 @@ abstract class Block {
 		this.color = c;
 	}
 	
-	public abstract void setX(int x);
-	public abstract void setY(int y);
-	public abstract void setLoc(Point o);
+	/*
+	 * getters and setters
+	 * very important for frame drawing
+	 */
+	public abstract void setCol(Color color);
+	public abstract void setLoc(Point point);
+	public abstract Color getColor();
 	public abstract Point getLoc();
 }

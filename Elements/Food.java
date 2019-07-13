@@ -8,7 +8,7 @@ public class Food extends Block{
 	 * food for snek
 	 */
 	private Point lp;
-	final Color color;
+	private Color color;
 
 	Food(Point p, Color color) {
 		super(p, color);
@@ -17,13 +17,18 @@ public class Food extends Block{
 	}
 
 	@Override
-	public void setX(int x) {
-		this.lp.x = x;
+	public void setCol(Color color) {
+		this.color = color;
 	}
 
 	@Override
-	public void setY(int y) {
-		this.lp.y = y;
+	public void setLoc(Point point) {
+		this.lp = point;
+	}
+
+	@Override
+	public Color getColor() {
+		return this.color;
 	}
 
 	@Override
@@ -31,9 +36,4 @@ public class Food extends Block{
 		return this.lp;
 	}
 
-	@Override
-	public void setLoc(Point o) {
-		this.lp = o;
-	}
-	
 }
