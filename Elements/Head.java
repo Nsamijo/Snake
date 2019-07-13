@@ -13,7 +13,7 @@ public class Head extends Body {
 	
 	public Body next;
 	
-	Head(Point point, Color color) {
+	public Head(Point point, Color color) {
 		super(point, color);
 		this.lp = point;
 		this.color = color;

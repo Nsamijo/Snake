@@ -53,7 +53,7 @@ public class Game extends JPanel implements KeyListener{
 		g.setColor(Color.BLACK);
 		Font font = new Font("Terminal", Font.BOLD, 25);
 		g.setFont(font);
-		g.drawString("Sccore: " + snake.getScore(), 25, 25);
+		g.drawString("Score: " + snake.getScore(), 25, 25);
 	}
 
 	@Override

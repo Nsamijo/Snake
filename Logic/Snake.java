@@ -75,7 +75,7 @@ public class Snake {
 	
 	/*recursive function for score/length check*/
 	public int getScore() {
-		return this.getScore(getHead());
+		return this.getScore(getHead()) -2 * 10;
 	}
 	/*recursive function for score/length check*/
 	int getScore(Body head) {
