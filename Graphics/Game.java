@@ -1,6 +1,8 @@
 package Graphics;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -34,6 +36,24 @@ public class Game extends JPanel implements KeyListener{
 		
 		Body last = snake.getHead();
 		
+		/*draw entire snake except tail*/
+		while(last.getNext() != null) {
+			g.setColor(last.getColor());
+			g.fillRect(last.getLoc().x * scale, last.getLoc().y * scale, scale, scale);
+			last = last.getNext();
+		}
+		/*draw the snakes tail*/
+		g.setColor(last.getColor());
+		g.fillRect(last.getLoc().x * scale, last.getLoc().y * scale, scale, scale);
+		
+		/*draw food*/
+		g.setColor(snake.food.getColor());
+		g.fillRect(snake.food.getLoc().x, snake.food.getLoc().y, scale, scale);
+		
+		g.setColor(Color.BLACK);
+		Font font = new Font("Terminal", Font.BOLD, 25);
+		g.setFont(font);
+		g.drawString("Sccore: " + snake.getScore(), 25, 25);
 	}
 
 	@Override
