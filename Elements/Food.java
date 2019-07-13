@@ -10,7 +10,7 @@ public class Food extends Block{
 	private Point lp;
 	private Color color;
 
-	Food(Point p, Color color) {
+	public Food(Point p, Color color) {
 		super(p, color);
 		this.lp = p;
 		this.color = color;

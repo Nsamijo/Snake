@@ -33,6 +33,19 @@ public class Body extends Block{
 	public void setLoc(Point point) {
 		this.lp = point;
 	}
+
+	@Override
+	public Color getColor() {
+		return this.color;
+	}
+
+	@Override
+	public Point getLoc() {
+		return this.lp;
+	}
+	/*
+	 * getters and setters for the linkedlist
+	 */
 	
 	public void setNext(Body next) {
 		this.next = next;
@@ -48,16 +61,6 @@ public class Body extends Block{
 	
 	public Body getPrev() {
 		return this.prev;
-	}
-
-	@Override
-	public Color getColor() {
-		return this.color;
-	}
-
-	@Override
-	public Point getLoc() {
-		return this.lp;
 	}
 
 }

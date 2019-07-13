@@ -32,20 +32,24 @@ public class Head extends Body {
 		this.lp = point;
 	}
 	
-	public void setNext(Body next) {
-		this.next = next;
-	}
-	
-	public Body getNext() {
-		return next;
-	}
-	
 	public Color getCol() {
 		return this.color;
 	}
 	
 	public Point getLoc() {
 		return this.lp;
+	}
+	
+	/*
+	 * getters and setters for the linkedlist
+	 */
+	
+	public void setNext(Body next) {
+		this.next = next;
+	}
+	
+	public Body getNext() {
+		return next;
 	}
 
 }

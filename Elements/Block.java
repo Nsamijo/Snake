@@ -3,7 +3,7 @@ package Elements;
 import java.awt.Color;
 import java.awt.Point;
 
-abstract class Block {
+public abstract class Block {
 	/*
 	 * abstract class for snake setup
 	 */
