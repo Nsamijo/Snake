@@ -14,7 +14,7 @@ public class Body extends Block{
 	private Point lp;
 	private Color color;
 
-	Body(Point p, Color color) {
+	public Body(Point p, Color color) {
 		super(p, color);
 		this.lp = p;
 		this.color = color;
