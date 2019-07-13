@@ -27,6 +27,7 @@ public class Vegan_Snake_Game {
 		/*game*/
 		JFrame frame = new JFrame();
 		Game game = new Game(snake);
+		frame.setTitle("Vegan Snake Game");
 		frame.add(game);
 		frame.addKeyListener(game);
 		frame.pack();
@@ -40,6 +41,6 @@ public class Vegan_Snake_Game {
 				game.repaint();
 			}
 		};
-		timer.scheduleAtFixedRate(task, 100, 100);
+		timer.schedule(task, 100);
 	}
 }

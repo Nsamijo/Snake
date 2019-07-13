@@ -1,6 +1,7 @@
 package Logic;
 import java.awt.Color;
 import java.awt.Point;
+import java.util.Random;
 
 import Elements.*;
 
@@ -12,9 +13,9 @@ public class Snake {
 	 * -find it the snakes tail
 	 * -check for cannibalism
 	 */
-	
+	Random random = new Random();
 	private Head head;
-	private Directions dir = Directions.LEFT;
+	private Directions dir = Directions.RIGHT;
 	private final int DEFAULT_SCALE = 25;
 	
 	public Food food = new Food(new Point(8, 6), Color.RED);
@@ -179,6 +180,7 @@ public class Snake {
 		
 		if(this.eaten()) {
 			this.growSnakeGrow(new Body(loc, Color.GREEN));
+			food.setLoc(new Point(random.nextInt(DEFAULT_SCALE), random.nextInt(DEFAULT_SCALE)));
 		}
 	}
 	

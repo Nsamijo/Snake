@@ -31,7 +31,7 @@ public class Game extends JPanel implements KeyListener{
 	}
 	
 	@Override
-	public void paintComponent(Graphics g) {
+	public void paint(Graphics g) {
 		g.clearRect(0, 0, 25 * Game.DEFAULT_SCALE, 25 * Game.DEFAULT_SCALE);
 		
 		Body last = snake.getHead();
