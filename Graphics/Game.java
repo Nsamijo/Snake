@@ -48,7 +48,7 @@ public class Game extends JPanel implements KeyListener{
 		
 		/*draw food*/
 		g.setColor(snake.food.getColor());
-		g.fillRect(snake.food.getLoc().x, snake.food.getLoc().y, scale, scale);
+		g.fillRect(snake.food.getLoc().x * scale, snake.food.getLoc().y * scale, scale, scale);
 		
 		g.setColor(Color.BLACK);
 		Font font = new Font("Terminal", Font.BOLD, 25);

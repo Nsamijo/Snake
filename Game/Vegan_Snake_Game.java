@@ -17,10 +17,10 @@ public class Vegan_Snake_Game {
 	static TimerTask task;
 	
 	public static void main(String[]args) {
-		Head head = new Head(new Point(3, 6), Color.DARK_GRAY);
+		Head head = new Head(new Point(4, 6), Color.DARK_GRAY);
 		
 		Snake snake = new Snake(head);
-		Body body = new Body(new Point(4, 6), Color.GREEN);
+		Body body = new Body(new Point(3, 6), Color.GREEN);
 		
 		snake.growSnakeGrow(body);
 		

@@ -17,7 +17,7 @@ public class Snake {
 	private Directions dir = Directions.LEFT;
 	private final int DEFAULT_SCALE = 25;
 	
-	public Food food = new Food(new Point(2, 6), Color.RED);
+	public Food food = new Food(new Point(8, 6), Color.RED);
 	
 	/*give the snake a head*/
 	public Snake(Head head) {
@@ -75,7 +75,7 @@ public class Snake {
 	
 	/*recursive function for score/length check*/
 	public int getScore() {
-		return this.getScore(getHead()) -2 * 10;
+		return this.getScore(getHead()) - 2;
 	}
 	/*recursive function for score/length check*/
 	int getScore(Body head) {
