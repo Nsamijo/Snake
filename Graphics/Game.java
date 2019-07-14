@@ -14,6 +14,10 @@ import Logic.*;
 
 public class Game extends JPanel implements KeyListener{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8814463296275299472L;
 	private static final int DEFAULT_SCALE = 25;
 	private Snake snake;
 	private int scale;
@@ -31,7 +35,7 @@ public class Game extends JPanel implements KeyListener{
 	}
 	
 	@Override
-	public void paint(Graphics g) {
+	public void paintComponent(Graphics g) {
 		g.clearRect(0, 0, 25 * Game.DEFAULT_SCALE, 25 * Game.DEFAULT_SCALE);
 		
 		Body last = snake.getHead();

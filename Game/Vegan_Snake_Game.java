@@ -17,8 +17,8 @@ public class Vegan_Snake_Game {
 	static TimerTask task;
 	
 	public static void main(String[]args) {
+		/*all the elements that have to be added*/
 		Head head = new Head(new Point(4, 6), Color.DARK_GRAY);
-		
 		Snake snake = new Snake(head);
 		Body body = new Body(new Point(3, 6), Color.GREEN);
 		
@@ -33,6 +33,7 @@ public class Vegan_Snake_Game {
 		frame.pack();
 		frame.setVisible(true);
 		
+		/*timer that redraws the snake, this way the snake can move*/
 		task = new TimerTask() {
 
 			@Override
@@ -41,6 +42,6 @@ public class Vegan_Snake_Game {
 				game.repaint();
 			}
 		};
-		timer.schedule(task, 100);
+		timer.schedule(task, 100, 100);
 	}
 }
