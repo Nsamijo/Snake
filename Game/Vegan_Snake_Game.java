@@ -42,6 +42,6 @@ public class Vegan_Snake_Game {
 				game.repaint();
 			}
 		};
-		timer.schedule(task, 100, 100);
+		timer.schedule(task, 100, 90);
 	}
 }

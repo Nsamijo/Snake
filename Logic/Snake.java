@@ -18,7 +18,7 @@ public class Snake {
 	private Directions dir = Directions.RIGHT;
 	private final int DEFAULT_SCALE = 25;
 	
-	public Food food = new Food(new Point(8, 6), Color.RED);
+	public Food food = new Food(new Point(8, 7), Color.RED);
 	
 	/*give the snake a head*/
 	public Snake(Head head) {
@@ -50,7 +50,7 @@ public class Snake {
 	/* collision check function*/
 	boolean bump(Block food) {
 		/*check if the location is the same*/
-		return (head.getLoc() == food.getLoc());
+		return (head.getLoc().x == food.getLoc().x && head.getLoc().y == food.getLoc().y);
 	}
 	
 	boolean eaten() {
@@ -59,13 +59,13 @@ public class Snake {
 	
 	/*function to check if there is cannibalism */
 	public boolean cannibalism() {
-		return cannibalism(this.getHead());
+		return cannibalism(this.getHead().getNext());
 	}
 	/*recursive function for cannibalism check*/
-	boolean cannibalism(Body head) {
-		if(head != null) {
-			if(!bump(head)) {
-				return cannibalism(head.getNext());
+	boolean cannibalism(Body body) {
+		if(body != null) {
+			if(!bump(body)) {
+				return cannibalism(body.getNext());
 			}else {
 				return true;
 			}
@@ -76,7 +76,7 @@ public class Snake {
 	
 	/*recursive function for score/length check*/
 	public int getScore() {
-		return this.getScore(getHead()) - 2;
+		return (this.getScore(getHead()) - 2) * 10;
 	}
 	/*recursive function for score/length check*/
 	int getScore(Body head) {
@@ -104,26 +104,27 @@ public class Snake {
 		case UP:
 			/*this denies us from making a 180 turn and commit cannibalism*/
 			if(this.dir != Directions.DOWN) {
-				this.changeDir(dir);
+				this.changeDir(Directions.UP);
 			break;
 			}
 		case DOWN:
 			if(this.dir != Directions.UP) {
-				this.changeDir(dir);
+				this.changeDir(Directions.DOWN);
 			break;
 			}
 		case RIGHT:
 			if(this.dir != Directions.LEFT) {
-				this.changeDir(dir);
+				this.changeDir(Directions.RIGHT);
 			break;
 			}
 		case LEFT:
 			if(this.dir != Directions.RIGHT) {
-				this.changeDir(dir);
+				this.changeDir(Directions.LEFT);
 			break;
 			}
 		
 		}
+		//System.out.println(this.dir);
 	}
 	
 	boolean bumpWall() {
@@ -157,19 +158,20 @@ public class Snake {
 		case DOWN:
 			y += 1;
 			this.setHead(x, y);
-			this.setDirections(dir);
+			this.changeDir(dir);
 			break;
 		case RIGHT:
 			x += 1;
 			this.setHead(x, y);
-			this.setDirections(dir);
+			this.changeDir(dir);
 			break;
 		case LEFT:
 			x -= 1;
 			this.setHead(x, y);
-			this.setDirections(dir);
+			this.changeDir(dir);
+			break;
 		}
-		
+		//System.out.println(this.dir);
 		if(this.cannibalism()) {
 			System.exit(0);
 		}
